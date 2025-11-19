@@ -169,7 +169,9 @@ const catsData = [
     },
 ];
 
-function getEmotionArray(cats) {
+const emotionRadios = document.getElementById("emotion-radios");
+
+function getEmotionsArray(cats) {
     const emotionsArray = [];
 
     // A horrible for loop
@@ -187,3 +189,14 @@ function getEmotionArray(cats) {
     }
     return emotionsArray;
 }
+
+function renderEmotionsRadios(cats) {
+    const emotions = getEmotionsArray(cats);
+    let renderStr = "";
+    for (let emotion of emotions) {
+        renderStr += `<p>${emotion}</p>`;
+    }
+    emotionRadios.innerHTML = renderStr;
+}
+
+renderEmotionsRadios(catsData);

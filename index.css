@@ -56,6 +56,13 @@ header {
     margin: 0px auto;
 }
 
+.emotion-radios {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+}
+
 .gifs-check {
     display: flex;
     align-items: center;
