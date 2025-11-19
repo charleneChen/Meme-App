@@ -19,12 +19,34 @@ emotionRadios.addEventListener("change", function (e) {
         .parentElement.classList.add("highlight");
 });
 
-getImageBtn.addEventListener("click", renderCat);
-
 memeModalCloseBtn.addEventListener("click", closeModal);
+
+getImageBtn.addEventListener("click", renderCat);
 
 function closeModal() {
     memeModal.style.display = "none";
+}
+
+function renderCat() {
+    const catObj = getSingleCat();
+    memeModalInner.innerHTML = `
+        <img 
+            class="cat-img"
+            src="/images/${catObj.image}"
+            alt="${catObj.alt}"
+            >
+    `;
+    memeModal.style.display = "flex";
+}
+
+function getSingleCat() {
+    const catsArray = getMatchingCatsArray();
+    if (catsArray.length === 1) {
+        return catsArray[0];
+    } else {
+        const randomIndex = Math.floor(Math.random() * catsArray.length);
+        return catsArray[randomIndex];
+    }
 }
 
 function getMatchingCatsArray() {
@@ -45,26 +67,18 @@ function getMatchingCatsArray() {
     }
 }
 
-function getSingleCat() {
-    const catsArray = getMatchingCatsArray();
-    if (catsArray.length === 1) {
-        return catsArray[0];
-    } else {
-        const randomIndex = Math.floor(Math.random() * catsArray.length);
-        return catsArray[randomIndex];
+function renderEmotionsRadios(cats) {
+    const emotions = getEmotionsArray(cats);
+    let radioItems = ``;
+    for (let emotion of emotions) {
+        radioItems += `
+        <div class="radio">
+            <label for="${emotion}">${emotion}</label>
+            <input type="radio" id="${emotion}" value="${emotion}" name="emotionRadios"> 
+        </div>
+        `;
     }
-}
-
-function renderCat() {
-    const catObj = getSingleCat();
-    memeModalInner.innerHTML = `
-        <img 
-            class="cat-img"
-            src="/images/${catObj.image}"
-            alt="${catObj.alt}"
-            >
-    `;
-    memeModal.style.display = "flex";
+    emotionRadios.innerHTML = radioItems;
 }
 
 function getEmotionsArray(cats) {
@@ -86,20 +100,6 @@ function getEmotionsArray(cats) {
         }
     }
     return emotionsArray;
-}
-
-function renderEmotionsRadios(cats) {
-    const emotions = getEmotionsArray(cats);
-    let radioItems = ``;
-    for (let emotion of emotions) {
-        radioItems += `
-        <div class="radio">
-            <label for="${emotion}">${emotion}</label>
-            <input type="radio" id="${emotion}" value="${emotion}" name="emotionRadios"> 
-        </div>
-        `;
-    }
-    emotionRadios.innerHTML = radioItems;
 }
 
 renderEmotionsRadios(catsData);
