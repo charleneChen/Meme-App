@@ -26,7 +26,11 @@ function getMatchingCatsArray() {
             'input[type="radio"]:checked'
         ).value;
         const matchingCatsArray = catsData.filter(function (cat) {
-            return cat.emotionTags.includes(selectedEmotion);
+            if (isGif) {
+                return cat.isGif && cat.emotionTags.includes(selectedEmotion);
+            } else {
+                return cat.emotionTags.includes(selectedEmotion);
+            }
         });
     }
 }
