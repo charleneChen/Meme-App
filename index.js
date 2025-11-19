@@ -29,21 +29,23 @@ function closeModal() {
 
 function renderCat() {
     const catObj = getSingleCat();
-    memeModalInner.innerHTML = `
+    if (catObj) {
+        memeModalInner.innerHTML = `
         <img 
             class="cat-img"
             src="/images/${catObj.image}"
             alt="${catObj.alt}"
             >
     `;
-    memeModal.style.display = "flex";
+        memeModal.style.display = "flex";
+    }
 }
 
 function getSingleCat() {
     const catsArray = getMatchingCatsArray();
     if (catsArray.length === 1) {
         return catsArray[0];
-    } else {
+    } else if (catsArray.length > 1) {
         const randomIndex = Math.floor(Math.random() * catsArray.length);
         return catsArray[randomIndex];
     }
@@ -64,6 +66,8 @@ function getMatchingCatsArray() {
             }
         });
         return matchingCatsArray;
+    } else {
+        return [];
     }
 }
 
