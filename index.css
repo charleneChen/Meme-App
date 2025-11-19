@@ -2,4 +2,83 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: "Karla", sans-serif;
+}
+
+/*typography*/
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: #eed6d3;
+    margin: 0;
+}
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    margin: 25px;
+}
+
+/* layout */
+
+header {
+    background-color: #67595e;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    width: 370px;
+    margin: 0 auto;
+    gap: 15px;
+    padding: 10px 0 0 0;
+}
+
+.pumpkin-img {
+    width: 80px;
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0px auto;
+}
+
+.gifs-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+}
+
+.gifs-check-label {
+    margin-right: 5px;
+}
+
+.get-image-btn {
+    background-color: #67595e;
+    color: #eed6d3;
+    padding: 15px 19px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+/* modal */
+
+.meme-modal {
+    display: none; /*flex when displayed*/
 }
