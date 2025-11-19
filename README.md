@@ -6,11 +6,7 @@ A meme generator application built as a solo project from Scrimba.
 
 ## 🎯 Features
 
--   Browse popular meme templates
--   Add custom top and bottom text
--   Generate shareable memes
--   Responsive design for mobile and desktop
--   Random meme template selector
+-   Select emotions and get meme image
 
 ## 🛠️ Technologies Used
 
