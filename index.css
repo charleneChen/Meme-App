@@ -63,6 +63,21 @@ header {
     border-radius: 5px;
 }
 
+.radio {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 4px 8px;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+label {
+    font-size: 14px;
+    padding: 3px;
+    width: 100%;
+    cursor: pointer;
+}
+
 .gifs-check {
     display: flex;
     align-items: center;
