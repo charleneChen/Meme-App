@@ -6,7 +6,7 @@ A meme generator application built as a solo project from Scrimba.
 
 ## 🎯 Features
 
--   Select emotions and get meme image
+-   Select emotions and get meme image opened in a modal
 
 ## 🛠️ Technologies Used
 
