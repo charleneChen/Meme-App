@@ -16,7 +16,7 @@ emotionRadios.addEventListener("change", function (e) {
         .parentElement.classList.add("highlight");
 });
 
-getImageBtn.addEventListener("click", getMatchingCatsArray);
+getImageBtn.addEventListener("click", renderCat);
 
 function getMatchingCatsArray() {
     const isGif = gifsOnlyOption.checked;
@@ -32,7 +32,22 @@ function getMatchingCatsArray() {
                 return cat.emotionTags.includes(selectedEmotion);
             }
         });
+        return matchingCatsArray;
     }
+}
+
+function getSingleCat() {
+    const catsArray = getMatchingCatsArray();
+    if (catsArray.length === 1) {
+        return catsArray[0];
+    } else {
+        const randomIndex = Math.floor(Math.random() * catsArray.length);
+        return catsArray[randomIndex];
+    }
+}
+
+function renderCat() {
+    getSingleCat();
 }
 
 function getEmotionsArray(cats) {
