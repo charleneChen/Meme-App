@@ -86,6 +86,13 @@ input[type="radio"] {
     cursor: pointer;
 }
 
+.highlight {
+    background-color: #fff0ee;
+    color: #bd301d;
+    font-weight: bold;
+    accent-color: #bd301d;
+}
+
 .gifs-check {
     display: flex;
     align-items: center;
