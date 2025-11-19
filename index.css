@@ -101,6 +101,7 @@ input[type="radio"] {
 }
 
 .gifs-check-label {
+    width: unset;
     margin-right: 5px;
 }
 
@@ -143,6 +144,14 @@ input[type="radio"] {
     padding: 2px 6px;
     font-size: 14px;
     cursor: pointer;
+}
+
+.meme-modal-close-btn:hover,
+.meme-modal-close-btn:focus,
+.meme-modal-close-btn.active {
+    background-color: #bd301d;
+    border: 2px solid #bd301d;
+    color: whitesmoke;
 }
 
 .cat-img {

@@ -5,6 +5,7 @@ const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnlyOption = document.getElementById("gifs-only-option");
 const memeModal = document.getElementById("meme-modal");
 const memeModalInner = document.getElementById("meme-modal-inner");
+const memeModalCloseBtn = document.getElementById("meme-modal-close-btn");
 
 emotionRadios.addEventListener("change", function (e) {
     const radios = document.getElementsByClassName("radio");
@@ -19,6 +20,12 @@ emotionRadios.addEventListener("change", function (e) {
 });
 
 getImageBtn.addEventListener("click", renderCat);
+
+memeModalCloseBtn.addEventListener("click", closeModal);
+
+function closeModal() {
+    memeModal.style.display = "none";
+}
 
 function getMatchingCatsArray() {
     const isGif = gifsOnlyOption.checked;
